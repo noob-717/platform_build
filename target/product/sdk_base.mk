@@ -26,17 +26,10 @@ PRODUCT_PACKAGES := \
 	Fallback \
 	Gallery \
 	GestureBuilder \
-	Launcher3 \
-	LegacyCamera \
 	librs_jni \
-	libwnndict \
-	libWnnEngDic \
-	libWnnJpnDic \
+	LegacyCamera \
 	LiveWallpapersPicker \
 	Mms \
-	Music \
-	OpenWnn \
-	Protips \
 	rild \
 	SdkSetup \
 	SmokeTest \
@@ -60,8 +53,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGE_OVERLAYS := development/sdk_overlay
 
 PRODUCT_COPY_FILES := \
-	device/generic/goldfish/data/etc/apns-conf.xml:system/etc/apns-conf.xml \
-	device/sample/etc/old-apns-conf.xml:system/etc/old-apns-conf.xml \
 	frameworks/base/data/sounds/effects/camera_click.ogg:system/media/audio/ui/camera_click.ogg \
 	frameworks/base/data/sounds/effects/VideoRecord.ogg:system/media/audio/ui/VideoRecord.ogg \
 	frameworks/base/data/sounds/effects/VideoStop.ogg:system/media/audio/ui/VideoStop.ogg \
@@ -91,14 +82,6 @@ $(call inherit-product-if-exists, external/roboto-fonts/fonts.mk)
 $(call inherit-product-if-exists, frameworks/base/data/keyboards/keyboards.mk)
 $(call inherit-product-if-exists, frameworks/webview/chromium/chromium.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core.mk)
-
-# include available languages for TTS in the system image
--include external/svox/pico/lang/PicoLangDeDeInSystem.mk
--include external/svox/pico/lang/PicoLangEnGBInSystem.mk
--include external/svox/pico/lang/PicoLangEnUsInSystem.mk
--include external/svox/pico/lang/PicoLangEsEsInSystem.mk
--include external/svox/pico/lang/PicoLangFrFrInSystem.mk
--include external/svox/pico/lang/PicoLangItItInSystem.mk
 
 # locale. en_US is both first and in alphabetical order to
 # ensure this is the default locale.
