@@ -715,7 +715,13 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
   script.Print("Flashing SuperSU..")
   common.ZipWriteStr(output_zip, "supersu/supersu.zip",
                  ""+input_zip.read("SYSTEM/addon.d/UPDATE-SuperSU.zip"))
-  script.FlashSuperSU()  
+  script.FlashSuperSU()
+  
+  script.Print(" ")
+  script.Print("Flashing Busybox..")
+  common.ZipWriteStr(output_zip, "busybox/busybox.zip",
+                 ""+input_zip.read("SYSTEM/addon.d/UPDATE-Busybox.zip"))
+  script.FlashBusybox()    
 
   script.ShowProgress(0.2, 10)
   device_specific.FullOTA_InstallEnd()
